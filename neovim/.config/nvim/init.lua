@@ -1,0 +1,6 @@
+require "user.plugins" 
+require "user.options" 
+require "user.telescope"
+require "user.keybinds" 
+require "user.lsp" 
+require "user.treesitter" 
