@@ -26,7 +26,8 @@ keymap("n", "<leader>fb", ":Telescope file_browser<CR>", opts)
 keymap("n", "<leader>ff", ":Telescope git_files<CR>", opts)
 keymap("n", "<leader>b", ":Telescope buffers<CR>", opts)
 
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+-- keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+keymap("n", "<leader>e", ":NvimTreeFindFileToggle<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
