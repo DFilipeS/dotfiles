@@ -10,12 +10,12 @@ require('lspconfig').gopls.setup{
         vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, {buffer = 0})
         vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, {buffer = 0})
         vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {buffer = 0})
-        vim.keymap.set("n", "<leader>f", vim.lsp.buf.formatting, {buffer = 0})
+        vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, {buffer = 0})
     end,
 }
 
 require('lspconfig').elixirls.setup {
-    cmd = { "/Users/daniel/Developer/Elixir/elixir-ls/release/language_server.sh" };
+    cmd = { "/Users/daniel/Development/Elixir/elixir-ls/release/language_server.sh" };
     capabilities = capabilities,
     on_attach = function()
         vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer = 0})
@@ -25,7 +25,7 @@ require('lspconfig').elixirls.setup {
         vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, {buffer = 0})
         vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, {buffer = 0})
         vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {buffer = 0})
-        vim.keymap.set("n", "<leader>f", vim.lsp.buf.formatting, {buffer = 0})
+        vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, {buffer = 0})
     end,
 }
 
