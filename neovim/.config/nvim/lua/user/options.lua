@@ -31,4 +31,17 @@ vim.opt.scrolloff = 8                           -- is one of my fav
 vim.opt.sidescrolloff = 8
 vim.opt.colorcolumn = '80'
 
-vim.cmd('colorscheme gruvbox')
+vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+require("catppuccin").setup({
+  integrations = {
+    treesitter_context = true,
+    telescope = true
+  }
+})
+vim.cmd [[colorscheme catppuccin]]
+
+-- vim.cmd[[colorscheme gruvbox]]
+-- vim.cmd[[colorscheme tokyonight]]
+
+require('lualine').setup()
+

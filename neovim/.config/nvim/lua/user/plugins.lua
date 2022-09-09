@@ -6,6 +6,8 @@ return require('packer').startup(function()
   -- Themes
   use 'gruvbox-community/gruvbox'
   use 'kyazdani42/nvim-web-devicons'
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use 'folke/tokyonight.nvim'
   
   -- Telescope
   use {
@@ -15,9 +17,11 @@ return require('packer').startup(function()
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use 'nvim-telescope/telescope-file-browser.nvim'
 
-  -- Airline
-  use 'vim-airline/vim-airline'
-  use 'vim-airline/vim-airline-themes'
+  -- Lualine
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
 
   -- LSP
   use 'neovim/nvim-lspconfig'
