@@ -15,7 +15,7 @@ require('lspconfig').gopls.setup{
 }
 
 require('lspconfig').elixirls.setup {
-    cmd = { "/Users/daniel/Development/Elixir/elixir-ls/release/language_server.sh" };
+    cmd = { "/Users/daniel/Developer/Elixir/elixir-ls/release/language_server.sh" };
     capabilities = capabilities,
     on_attach = function()
         vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer = 0})

@@ -63,5 +63,8 @@ return require('packer').startup(function()
         run = ':TSUpdate'
     }
   use 'nvim-treesitter/nvim-treesitter-context'
+
+  -- toggleterm.nvim
+  use {"akinsho/toggleterm.nvim", tag = '*'}
 end)
 
