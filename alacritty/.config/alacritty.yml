@@ -122,29 +122,30 @@ font:
     family: 'JetBrainsMono Nerd Font'
 
     # The `style` can be specified to pick a specific face.
-    style: Regular
+    # style: Regular
 
   # Bold font face
-  #bold:
+  bold:
     # Font family
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
+    family: 'JetBrainsMono Nerd Font'
 
     # The `style` can be specified to pick a specific face.
-    #style: Bold
+    style: ExtraBold 
 
   # Italic font face
-  #italic:
+  # italic:
     # Font family
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
     #family: monospace
+    # family: 'JetBrainsMono Nerd Font'
 
     # The `style` can be specified to pick a specific face.
-    #style: Italic
+    # style: Italic
 
   # Bold italic font face
   #bold_italic:
@@ -450,7 +451,7 @@ font:
 #working_directory: None
 
 # Send ESC (\x1b) before characters when alt is pressed.
-#alt_send_esc: true
+alt_send_esc: false 
 
 # Offer IPC using `alacritty msg` (unix only)
 #ipc_socket: true
