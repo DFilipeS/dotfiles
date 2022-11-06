@@ -2,8 +2,9 @@ return require('packer').startup(function()
   -- Packer 
   use 'wbthomason/packer.nvim'
 
-  -- Themes
   use 'kyazdani42/nvim-web-devicons'
+
+  -- Themes
   use 'gruvbox-community/gruvbox'
   use 'folke/tokyonight.nvim'
   use { "catppuccin/nvim", as = "catppuccin" }
@@ -13,7 +14,7 @@ return require('packer').startup(function()
 
   -- vim-visual-multi
   use { 'mg979/vim-visual-multi', branch = 'master' }
-  
+
   -- Telescope
   use {
     'nvim-telescope/telescope.nvim',
@@ -83,14 +84,6 @@ return require('packer').startup(function()
     requires = 'kyazdani42/nvim-web-devicons',
     config = function ()
       require("bufferline").setup{}
-    end
-  }
-
-  -- alpha-nvim
-  use {
-    'goolord/alpha-nvim',
-    config = function ()
-        require'alpha'.setup(require'alpha.themes.dashboard'.config)
     end
   }
 
