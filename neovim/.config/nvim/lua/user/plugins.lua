@@ -1,13 +1,18 @@
 return require('packer').startup(function()
+  -- Packer 
   use 'wbthomason/packer.nvim'
-  use 'tpope/vim-commentary' 
-  use { 'mg979/vim-visual-multi', branch = 'master' }
 
   -- Themes
-  use 'gruvbox-community/gruvbox'
   use 'kyazdani42/nvim-web-devicons'
-  use { "catppuccin/nvim", as = "catppuccin" }
+  use 'gruvbox-community/gruvbox'
   use 'folke/tokyonight.nvim'
+  use { "catppuccin/nvim", as = "catppuccin" }
+
+  -- vim-commentary
+  use 'tpope/vim-commentary' 
+
+  -- vim-visual-multi
+  use { 'mg979/vim-visual-multi', branch = 'master' }
   
   -- Telescope
   use {
@@ -24,7 +29,11 @@ return require('packer').startup(function()
   }
 
   -- LSP
-  use 'neovim/nvim-lspconfig'
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
 
   -- Completion
   use 'hrsh7th/cmp-nvim-lsp'
@@ -44,7 +53,7 @@ return require('packer').startup(function()
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icons
+      'kyazdani42/nvim-web-devicons', 
     },
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
@@ -66,5 +75,32 @@ return require('packer').startup(function()
 
   -- toggleterm.nvim
   use {"akinsho/toggleterm.nvim", tag = '*'}
+
+  -- bufferline
+  use {
+    'akinsho/bufferline.nvim', 
+    tag = "v2.*", 
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function ()
+      require("bufferline").setup{}
+    end
+  }
+
+  -- alpha-nvim
+  use {
+    'goolord/alpha-nvim',
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    end
+  }
+
+  use {
+    "ahmedkhalf/project.nvim",
+    config = function()
+      require("project_nvim").setup {
+        show_hidden = true
+      }
+    end
+  }
 end)
 
