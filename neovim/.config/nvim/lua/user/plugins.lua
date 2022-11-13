@@ -1,19 +1,17 @@
 return require('packer').startup(function()
   -- Packer 
   use 'wbthomason/packer.nvim'
-
   use 'kyazdani42/nvim-web-devicons'
+  use 'tpope/vim-commentary'
+  use { 'mg979/vim-visual-multi', branch = 'master' }
+  use 'nvim-lualine/lualine.nvim'
+  use 'nvim-lua/popup.nvim'
+  use 'stevearc/dressing.nvim'
 
   -- Themes
   use 'gruvbox-community/gruvbox'
   use 'folke/tokyonight.nvim'
   use { "catppuccin/nvim", as = "catppuccin" }
-
-  -- vim-commentary
-  use 'tpope/vim-commentary' 
-
-  -- vim-visual-multi
-  use { 'mg979/vim-visual-multi', branch = 'master' }
 
   -- Telescope
   use {
@@ -23,18 +21,18 @@ return require('packer').startup(function()
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use 'nvim-telescope/telescope-file-browser.nvim'
 
-  -- Lualine
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
-
   -- LSP
   use {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
   }
+  use({
+    "j-hui/fidget.nvim",
+    config = function()
+      require("fidget").setup()
+    end
+  })
 
   -- Completion
   use 'hrsh7th/cmp-nvim-lsp'
@@ -44,9 +42,12 @@ return require('packer').startup(function()
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
 
+  -- Rust
+  use 'simrat39/rust-tools.nvim'
+
   -- nvim-autopairs
   use {
-    "windwp/nvim-autopairs", 
+    "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
   }
 
@@ -54,7 +55,7 @@ return require('packer').startup(function()
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {
-      'kyazdani42/nvim-web-devicons', 
+      'kyazdani42/nvim-web-devicons',
     },
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
@@ -79,8 +80,8 @@ return require('packer').startup(function()
 
   -- bufferline
   use {
-    'akinsho/bufferline.nvim', 
-    tag = "v2.*", 
+    'akinsho/bufferline.nvim',
+    tag = "v2.*",
     requires = 'kyazdani42/nvim-web-devicons',
     config = function ()
       require("bufferline").setup{}
