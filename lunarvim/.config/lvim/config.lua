@@ -173,6 +173,14 @@ lvim.plugins = {
   --       cmd = "TroubleToggle",
   --     },
   {
+    'rose-pine/neovim',
+    name = 'rose-pine',
+    config = function()
+      require("rose-pine").setup()
+      vim.cmd('colorscheme rose-pine')
+    end
+  },
+  {
     "j-hui/fidget.nvim",
     config = function()
       require("fidget").setup()
