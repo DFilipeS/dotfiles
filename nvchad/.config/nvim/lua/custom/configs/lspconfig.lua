@@ -19,3 +19,8 @@ lspconfig.rust_analyzer.setup({
 
 lspconfig.tailwindcss.setup{}
 lspconfig.emmet_ls.setup{}
+lspconfig.elixirls.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { "/Users/daniel/Developer/elixir-ls/release/language_server.sh" }
+}

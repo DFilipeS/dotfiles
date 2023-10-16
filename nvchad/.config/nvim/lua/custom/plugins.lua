@@ -6,6 +6,29 @@ local plugins = {
         "rust-analyzer",
         "tailwindcss-language-server",
         "emmet-ls",
+        "elixir-ls",
+      },
+    },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "html",
+        "css",
+        "javascript",
+        "typescript",
+        "tsx",
+        "json",
+        "rust",
+        "toml",
+        "elixir",
+        "heex",
+        "eex",
+        "markdown",
+        "sql",
       },
     },
   },
@@ -53,6 +76,11 @@ local plugins = {
       table.insert(M.sources, { name = "crates" })
       return M
     end,
+  },
+  {
+    "j-hui/fidget.nvim",
+    tag = "legacy",
+    event = "LspAttach",
   },
 }
 return plugins
